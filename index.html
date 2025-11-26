@@ -3,33 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página GitHub Pages</title>
+    <title>Adriano Rios | Desenvolvedor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Variáveis de Cores */
+        :root {
+            --cor-fundo: #1c1c1c; /* Preto Quase Pura */
+            --cor-primaria: #00bcd4; /* Ciano Brilhante (Destaque) */
+            --cor-texto: #e0e0e0; /* Cinza Claro */
+            --cor-secundaria: #333333; /* Elementos Secundários */
+        }
+
+        /* Reset Básico e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-            text-align: center;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
         }
-        h1 {
-            color: #007bff;
-        }
+
+        /* Estrutura Principal */
         .container {
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background: var(--cor-fundo);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--cor-secundaria);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Seção Herói (Destaque) */
+        #hero {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid var(--cor-secundaria);
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+        }
+
+        #hero h2 {
+            font-size: 1.8em;
+            color: var(--cor-primaria);
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
             display: inline-block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #0097a7; /* Ciano um pouco mais escuro */
+            transform: scale(1.05);
+        }
+
+        /* Seção Habilidades (Skills) */
+        #skills {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--cor-primaria);
+            font-weight: 700;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--cor-secundaria);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);
+        }
+
+        .skill-item h3 {
+            margin-bottom: 10px;
+            color: var(--cor-primaria);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-secundaria);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>👋 Olá, Mundo!</h1>
-        <p>Esta é a minha página simples hospedada no **GitHub Pages**.</p>
-        <p>Estou aprendendo a hospedar projetos!</p>
-    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">JS.Dev</div>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Desenvolvedor Full Stack</h1>
+            <h2>Transformando ideias em código e soluções digitais.</h2>
+            <a href="#" class="cta-button">Ver Projetos</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <p>React, Next.js, HTML5, CSS3 (Sass/Tailwind)</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <p>Node.js, Python (Django/Flask), Express.js, REST APIs</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Banco de Dados</h3>
+                    <p>PostgreSQL, MongoDB, SQL, Firestore</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Ferramentas</h3>
+                    <p>Git, Docker, AWS/Azure, CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 João Silva Dev. | 
+                <a href="https://github.com/joaosilva" target="_blank">GitHub</a>
+                |
+                <a href="https://linkedin.com/in/joaosilva" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
